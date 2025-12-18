@@ -92,8 +92,8 @@ async def create_movie(
         if db_movie:
             raise HTTPException(
                 status_code=409,
-                detail=(f"A movie with the name {movie.name} "
-                        f"and {movie.date} already exists.")
+                detail=(f"A movie with the name '{movie.name}' "
+                        f"and release date '{movie.date}' already exists.")
             )
         country_obj = await get_or_create_entity(
             db=db,
