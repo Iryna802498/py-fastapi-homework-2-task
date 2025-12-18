@@ -54,7 +54,7 @@ async def read_movie_list(
     }
 
 
-@router.post("/movies/", response_model=MovieDetailResponse)
+@router.post("/movies/", status_code=201)
 async def create_movie_with_all_entity(
     movie: MovieCreate,
     db: AsyncSession = Depends(get_db)

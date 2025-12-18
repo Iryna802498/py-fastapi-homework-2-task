@@ -88,6 +88,8 @@ class MovieDetailResponse(BaseModel):
     actors: List[ActorsBase]
     languages: List[LanguagesBase]
 
+    model_config = ConfigDict(from_attributes=True)
+
 
 class MovieUpdate(BaseModel):
     name: Optional[str] = Field(None, max_length=255)
